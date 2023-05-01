@@ -9,4 +9,4 @@ sudo pip3 install -r requirements.txt
 wget https://raw.githubusercontent.com/leandoo/rsnxp/main/script.py?token=GHSAT0AAAAAACB2A3RCSDNHUI5LDDTOJFRUZCPFOZA
 
 # Executa o arquivo Python
-python3 arquivo.py
+python3 script.py
