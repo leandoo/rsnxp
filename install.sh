@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Prompt para inserção da chave de ativação
+echo "Insira a chave de ativação:"
+read chave
+
+# Validação da chave
+if [ "$chave" != "leandro" ]; then
+    echo "Chave inválida. Instalação abortada."
+    exit 1
+fi
+
 # Função de instalação
 function install() {
     # Instala as dependências do Python
@@ -32,22 +42,12 @@ function install() {
     # Executa o arquivo Python
     python3 script.py
 
-    # Prompt para inserção da chave
-    echo "Insira a chave de ativação:"
-    read chave
+    # Tornar o arquivo executável
+    chmod +x install.sh
 
-    # Validação da chave
-    if [ "$chave" != "leandro" ]; then
-        echo "Chave inválida. Instalação abortada."
-        exit 1
-    fi
+    # Executa o arquivo de instalação e execução
+    ./install.sh
 }
 
 # Chama a função de instalação
 install
-
-# Tornar o arquivo executável
-chmod +x install_and_run.sh
-
-# Executar o arquivo
-./install_and_run.sh
