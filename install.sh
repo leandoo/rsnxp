@@ -6,7 +6,7 @@ sudo apt-get install -y python3-pip
 sudo pip3 install -r requirements.txt
 
 # Faz o download do arquivo Python
-wget https://raw.githubusercontent.com/leandoo/rsnxp/main/script.py?token=GHSAT0AAAAAACB2A3RCSDNHUI5LDDTOJFRUZCPFOZA
+wget https://raw.githubusercontent.com/leandoo/rsnxp/main/script.py
 
 # Executa o arquivo Python
 python3 script.py
