@@ -3,7 +3,26 @@
 # Instala as dependências do Python
 sudo apt-get update
 sudo apt-get install -y python3-pip
-sudo pip3 install -r requirements.txt
+
+# Define uma variável com o conteúdo do requirements.txt
+REQUIREMENTS=$(cat <<EOF
+hmac
+json
+hashlib
+time
+requests
+websock
+EOF
+)
+
+# Cria um arquivo temporário requirements.txt com o conteúdo da variável
+REQUIREMENTS_FILE=$(mktemp -t requirements.XXXXXX)
+echo "${REQUIREMENTS}" > "${REQUIREMENTS_FILE}"
+
+# Instala os pacotes listados no arquivo requirements.txt
+pip install -r "${REQUIREMENTS_FILE}"
+
+# Resto do seu script de instalação ...
 
 # Faz o download do arquivo Python
 wget https://raw.githubusercontent.com/leandoo/rsnxp/main/script.py
