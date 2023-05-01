@@ -28,3 +28,10 @@ then
     exit 1
 
 fi
+
+# Verificação da chave
+chave_correta = "leandro"
+chave_inserida = input("Insira a chave de ativação: ")
+if chave_inserida != chave_correta:
+    print("Chave inválida. Encerrando o script.")
+    sys.exit(1)
